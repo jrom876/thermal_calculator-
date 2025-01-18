@@ -181,7 +181,7 @@ def show_AT_Labels():
 		
 		result = gen_target(float(AStartset.get()), i*float(AMultset.get()))
 		Atemp_rise = gen_temp_rise(IVset.get(), OVset.get(), MAset.get(), RTHset.get())
-		Ajtempset = float(Atemp_rise + result)
+		Ajtempset = round(float(Atemp_rise + result), 4)
 		
 		Amb_val_label_text = tk.StringVar()
 		Amb_val_label_text.set(result)
