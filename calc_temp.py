@@ -405,8 +405,8 @@ JTemp_Amb_PF_val_label.grid(row=1, column=6)
 ################ The Label Generator ################
 
 for a in range(30):
-	root.grid_columnconfigure(a,  minsize=column_size)
-	root.grid_rowconfigure(a,  minsize=row_size)
+	root.grid_columnconfigure	(a,  minsize=column_size)
+	root.grid_rowconfigure		(a,  minsize=row_size)
 	
 	Amb_in_label.grid		(row=0, column=4)
 	JTemp_Amb_in_label.grid 	(row=0, column=5)
