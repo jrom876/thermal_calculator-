@@ -65,10 +65,10 @@ V_DROP	 	= 0
 MEASURED_I	= 0
 MEASURED_W	= 0
 TEMP_RISE	= 0
-RTH			= 0
-MAX_AMBIENT = 0
+RTH		= 0
+MAX_AMBIENT 	= 0
 JUNCT_TEMP 	= 0
-MAX_ALLOWED = 0
+MAX_ALLOWED 	= 0
 
 ####################################################
 ############### Button Declarations ################
@@ -91,11 +91,11 @@ clear_AT_button = tk.Button(text="Clear AT",
 		# ~ command=lambda: clear_Data_Labels(), width=13)                     
 
 gen_temp_button.grid		(row=0,		column=0)
-ambient_button.grid			(row=10,	column=0)
+ambient_button.grid		(row=10,	column=0)
 clear_AT_button.grid		(row=11,	column=0)
 # ~ input_voltage_button.grid	(row=14,  	column=0)
-# ~ clear_IV_button.grid		(row=15,	column=0)
-# ~ clear_data_button.grid		(row=18,  	column=0)
+# ~ clear_IV_button.grid	(row=15,	column=0)
+# ~ clear_data_button.grid	(row=18,  	column=0)
 
 ################### Functions and Commands ################### 
 
@@ -122,12 +122,12 @@ def pass_fail(juncTemp, maxTemp):
 	return result
 
 def gen_temp():	
-	globals()[INPUT_V]		= IVset.get()
+	globals()[INPUT_V]	= IVset.get()
 	globals()[OUTPUT_V] 	= OVset.get()
-	globals()[V_DROP]	 	= Vdropset.get()
+	globals()[V_DROP]	= Vdropset.get()
 	globals()[MEASURED_I]	= MAset.get()
 	globals()[MEASURED_W]	= MWset.get()
-	globals()[RTH]			= RTHset.get()
+	globals()[RTH]		= RTHset.get()
 	globals()[TEMP_RISE]	= TRiseset.get()
 	globals()[MAX_AMBIENT] 	= MAXambset.get()
 	globals()[JUNCT_TEMP] 	= JTempset.get()
@@ -163,12 +163,12 @@ def gen_temp():
 
 
 def show_AT_Labels():	
-	globals()[INPUT_V]		= IVset.get()
+	globals()[INPUT_V]	= IVset.get()
 	globals()[OUTPUT_V] 	= OVset.get()
-	globals()[V_DROP]	 	= Vdropset.get()
+	globals()[V_DROP]	= Vdropset.get()
 	globals()[MEASURED_I]	= MAset.get()
 	globals()[MEASURED_W]	= MWset.get()
-	globals()[RTH]			= RTHset.get()
+	globals()[RTH]		= RTHset.get()
 	globals()[TEMP_RISE]	= TRiseset.get()
 	globals()[MAX_AMBIENT] 	= MAXambset.get()
 	globals()[JUNCT_TEMP] 	= JTempset.get()
@@ -177,7 +177,7 @@ def show_AT_Labels():
 	TRiseset.set(round(gen_temp_rise(IVset.get(), OVset.get(), MAset.get(), RTHset.get()),4))
 	globals()[TEMP_RISE]	= TRiseset.get()
 	Vdropset.set(float(IVset.get()) - float(OVset.get()))
-	globals()[V_DROP]	 	= Vdropset.get()
+	globals()[V_DROP]	 = Vdropset.get()
 	mwset = (float(Vdropset.get()) * float(MAset.get()))
 	MWset.set(float(round(mwset,5)))
 	globals()[MEASURED_W]	= MWset.get()
@@ -217,7 +217,7 @@ def show_AT_Labels():
 	# ~ globals()[V_DROP]	 	= Vdropset.get()
 	# ~ globals()[MEASURED_I]	= MAset.get()
 	# ~ globals()[MEASURED_W]	= MWset.get()
-	# ~ globals()[RTH]			= RTHset.get()
+	# ~ globals()[RTH]		= RTHset.get()
 	# ~ globals()[TEMP_RISE]	= TRiseset.get()
 	# ~ globals()[MAX_AMBIENT] 	= MAXambset.get()
 	# ~ globals()[JUNCT_TEMP] 	= JTempset.get()
@@ -341,8 +341,8 @@ AMultset_entry 		= tk.Entry(root, textvariable=AMultset, width=14)
 ACountset_entry 	= tk.Entry(root, textvariable=ACountset, width=14)
 
 # ~ VStartset_entry 	= tk.Entry(root, textvariable=VStartset, width=14)
-# ~ VEndset_entry 		= tk.Entry(root, textvariable=VEndset, width=14)
-# ~ VMultset_entry 		= tk.Entry(root, textvariable=VMultset, width=14)
+# ~ VEndset_entry 	= tk.Entry(root, textvariable=VEndset, width=14)
+# ~ VMultset_entry 	= tk.Entry(root, textvariable=VMultset, width=14)
 # ~ VCountset_entry 	= tk.Entry(root, textvariable=VCountset, width=14)
 
 IVset.set(0.21)
@@ -371,19 +371,19 @@ ACountset.set(int(gen_count(int(AEndset.get()) + int(AMultset.get()),
 # ~ VCountset.set(int(gen_count(int(VEndset.get()) + int(VMultset.get()), 
 			# ~ int(VStartset.get())) / int(VMultset.get())))
 
-IVset_entry.grid		(row=0,  column=1)
-OVset_entry.grid		(row=1,  column=1)
-Vdropset_entry.grid		(row=2,  column=1)
+IVset_entry.grid	(row=0,  column=1)
+OVset_entry.grid	(row=1,  column=1)
+Vdropset_entry.grid	(row=2,  column=1)
 MAset_entry.grid    	(row=3,  column=1)
 MWset_entry.grid    	(row=4,  column=1)
-RTHset_entry.grid		(row=5,  column=1)
+RTHset_entry.grid	(row=5,  column=1)
 TRiseset_entry.grid 	(row=6,  column=1)
 MAXambset_entry.grid 	(row=7,  column=1)
 JTempset_entry.grid 	(row=8,  column=1)
 MAXallset_entry.grid 	(row=9,  column=1)
 
 AStartset_entry.grid 	(row=10,  column=1)
-AEndset_entry.grid 		(row=11,  column=1)
+AEndset_entry.grid 	(row=11,  column=1)
 AMultset_entry.grid 	(row=12, column=1)
 ACountset_entry.grid 	(row=13, column=1)
 
@@ -506,18 +506,18 @@ amb_count_label.grid(row=13, column=2)
 ###########
 
 Amb_in_label   		= tk.Label(root, text="Ambient ")
-JTemp_Amb_in_label  = tk.Label(root, text="Junct T")
-JTemp_Amb_PF_in_label= tk.Label(root, text="P/F")
+JTemp_Amb_in_label  	= tk.Label(root, text="Junct T")
+JTemp_Amb_PF_in_label	= tk.Label(root, text="P/F")
 
-# ~ IVolt_in_label   	= tk.Label(root, text="Input V ")
-# ~ JTemp_IV_in_label   = tk.Label(root, text="Junct T")
-# ~ JTemp_IV_PF_in_label= tk.Label(root, text="P/F")
+# ~ IVolt_in_label   		= tk.Label(root, text="Input V ")
+# ~ JTemp_IV_in_label   	= tk.Label(root, text="Junct T")
+# ~ JTemp_IV_PF_in_label	= tk.Label(root, text="P/F")
 
-Amb_val_label			= tk.StringVar()
-JTemp_Amb_val_label		= tk.StringVar()
+Amb_val_label		= tk.StringVar()
+JTemp_Amb_val_label	= tk.StringVar()
 JTemp_Amb_PF_val_label	= tk.StringVar()
 
-# ~ IVolt_val_label			= tk.StringVar()
+# ~ IVolt_val_label		= tk.StringVar()
 # ~ JTemp_IV_val_label		= tk.StringVar()
 # ~ JTemp_IV_PF_val_label	= tk.StringVar()
 
@@ -558,12 +558,12 @@ for a in range(30):
 	root.grid_columnconfigure(a,  minsize=column_size)
 	root.grid_rowconfigure(a,  minsize=row_size)
 	
-	Amb_in_label.grid		(   row=0, column=4)
-	JTemp_Amb_in_label.grid (   row=0, column=5)
-	JTemp_Amb_PF_in_label.grid( row=0, column=6)
-	# ~ IVolt_in_label.grid		(	row=0, column=7)
-	# ~ JTemp_IV_in_label.grid	( 	row=0, column=8)
-	# ~ JTemp_IV_PF_in_label.grid( 	row=0, column=9)
+	Amb_in_label.grid		(row=0, column=4)
+	JTemp_Amb_in_label.grid 	(row=0, column=5)
+	JTemp_Amb_PF_in_label.grid	(row=0, column=6)
+	# ~ IVolt_in_label.grid		(row=0, column=7)
+	# ~ JTemp_IV_in_label.grid	(row=0, column=8)
+	# ~ JTemp_IV_PF_in_label.grid	(row=0, column=9)
  
 root.update()
 root.mainloop()
