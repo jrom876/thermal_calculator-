@@ -411,9 +411,6 @@ for a in range(30):
 	Amb_in_label.grid		(row=0, column=4)
 	JTemp_Amb_in_label.grid 	(row=0, column=5)
 	JTemp_Amb_PF_in_label.grid	(row=0, column=6)
-	# ~ IVolt_in_label.grid		(row=0, column=7)
-	# ~ JTemp_IV_in_label.grid	(row=0, column=8)
-	# ~ JTemp_IV_PF_in_label.grid	(row=0, column=9)
  
 root.update()
 root.mainloop()
