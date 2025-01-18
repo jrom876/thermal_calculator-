@@ -80,22 +80,10 @@ ambient_button = tk.Button(text="Ambient Temp",
                        
 clear_AT_button = tk.Button(text="Clear AT",   
 		command=lambda: clear_AT_Data_Labels(), width=13)                     
-                      
-# ~ input_voltage_button = tk.Button(text="Input V",   
-		# ~ command=lambda: show_IV_Labels(), width=13)                     
-                       
-# ~ clear_IV_button = tk.Button(text="Clear IV",   
-		# ~ command=lambda: clear_IV_Data_Labels(), width=13)                     
-                     
-# ~ clear_data_button = tk.Button(text="Clear DATA",   
-		# ~ command=lambda: clear_Data_Labels(), width=13)                     
-
+  
 gen_temp_button.grid		(row=0,		column=0)
 ambient_button.grid		(row=10,	column=0)
 clear_AT_button.grid		(row=11,	column=0)
-# ~ input_voltage_button.grid	(row=14,  	column=0)
-# ~ clear_IV_button.grid	(row=15,	column=0)
-# ~ clear_data_button.grid	(row=18,  	column=0)
 
 ################### Functions and Commands ################### 
 
@@ -211,55 +199,6 @@ def show_AT_Labels():
 		JTemp_Amb_PF_val_label.grid(row=1+i, column=6)	
 
 
-# ~ def show_IV_Labels():	
-	# ~ globals()[INPUT_V]		= IVset.get()
-	# ~ globals()[OUTPUT_V] 	= OVset.get()
-	# ~ globals()[V_DROP]	 	= Vdropset.get()
-	# ~ globals()[MEASURED_I]	= MAset.get()
-	# ~ globals()[MEASURED_W]	= MWset.get()
-	# ~ globals()[RTH]		= RTHset.get()
-	# ~ globals()[TEMP_RISE]	= TRiseset.get()
-	# ~ globals()[MAX_AMBIENT] 	= MAXambset.get()
-	# ~ globals()[JUNCT_TEMP] 	= JTempset.get()
-	# ~ globals()[MAX_ALLOWED] 	= MAXallset.get()
-	
-	# ~ TRiseset.set(round(gen_temp_rise(IVset.get(), OVset.get(), MAset.get(), RTHset.get()),4))
-	# ~ globals()[TEMP_RISE]	= TRiseset.get()
-	# ~ Vdropset.set(float(IVset.get()) - float(OVset.get()))
-	# ~ globals()[V_DROP]	 	= Vdropset.get()
-	# ~ mwset = (float(Vdropset.get()) * float(MAset.get()))
-	# ~ MWset.set(float(round(mwset,4)))
-	# ~ globals()[MEASURED_W]	= MWset.get()
-	# ~ jtempset = (float(TRiseset.get()) + float(MAXambset.get()))
-	# ~ JTempset.set(float(round(jtempset,4)))	
-	# ~ globals()[JUNCT_TEMP] 	= JTempset.get()
-	
-	##clear_IV_Data_Labels()
-	# ~ VCountset.set(int(gen_count(int(VEndset.get()) + int(VMultset.get()), int(VStartset.get())) / int(VMultset.get())))
-	# ~ count = int(VCountset.get())
-	
-	# ~ for i in range (count):
-		
-		# ~ result = gen_target(float(VStartset.get()), i*float(VMultset.get()))
-		# ~ Vtemp_rise = gen_temp_rise(IVset.get(), OVset.get(), MAset.get(), RTHset.get())
-		# ~ Vjtempset = float(Vtemp_rise + result)
-		
-		# ~ IVolt_val_label_text = tk.StringVar()
-		# ~ IVolt_val_label_text.set(result)
-		# ~ IVolt_val_label = tk.Label(root, textvariable=IVolt_val_label_text, width=10)
-		# ~ IVolt_val_label.grid(row=1+i, column=7)
-
-		# ~ JTemp_IV_val_label_text = tk.StringVar()
-		# ~ JTemp_IV_val_label_text.set(Vjtempset)
-		# ~ JTemp_IV_val_label = tk.Label(root, textvariable=JTemp_IV_val_label_text, width=10)
-		# ~ JTemp_IV_val_label.grid(row=1+i, column=8)
-
-		# ~ JTemp_IV_PF_val_label_text = tk.StringVar()
-		# ~ JTemp_IV_PF_val_label_text.set(pass_fail(float(Vjtempset), float(MAXallset.get())))
-		# ~ JTemp_IV_PF_val_label = tk.Label(root, textvariable=JTemp_IV_PF_val_label_text, width=10)
-		# ~ JTemp_IV_PF_val_label.grid(row=1+i, column=9)	
-
-
 def clear_AT_Data_Labels():
 	count = int(ACountset.get())
 	for i in range (count):
@@ -278,27 +217,6 @@ def clear_AT_Data_Labels():
 		JTemp_Amb_PF_val_label_text.set("")
 		JTemp_Amb_PF_val_label = tk.Label(root, textvariable=JTemp_Amb_PF_val_label_text, width=10)
 		JTemp_Amb_PF_val_label.grid(row=1+i, column=6)
-		
-
-# ~ def clear_IV_Data_Labels():
-	# ~ count = int(Countset.get())
-	# ~ for i in range (count):
-		
-		# ~ T_val_label_text = tk.StringVar()
-		# ~ T_val_label_text.set("")
-		# ~ T_val_label = tk.Label(root, textvariable=T_val_label_text, width=10)
-		# ~ T_val_label.grid(row=1+i, column=4)
-
-		# ~ SV_val_label_text = tk.StringVar()
-		# ~ SV_val_label_text.set("")
-		# ~ SV_val_label = tk.Label(root, textvariable=SV_val_label_text, width=10)
-		# ~ SV_val_label.grid(row=1+i, column=5)
-
-		# ~ W_val_label_text = tk.StringVar()
-		# ~ W_val_label_text.set("")
-		# ~ W_val_label = tk.Label(root, textvariable=W_val_label_text, width=10)
-		# ~ W_val_label.grid(row=1+i, column=6)
-			
 
 ####################################################
 ################ Entry Declarations ################
@@ -319,11 +237,6 @@ AEndset 	= tk.StringVar()
 AMultset 	= tk.StringVar()
 ACountset 	= tk.StringVar()
 
-# ~ VStartset 	= tk.StringVar()
-# ~ VEndset 	= tk.StringVar()
-# ~ VMultset 	= tk.StringVar()
-# ~ VCountset 	= tk.StringVar()
-
 IVset_entry 		= tk.Entry(root, textvariable=IVset, width=14)
 OVset_entry 		= tk.Entry(root, textvariable=OVset,  width=14)
 Vdropset_entry 		= tk.Entry(root, textvariable=Vdropset, width=14)
@@ -339,11 +252,6 @@ AStartset_entry 	= tk.Entry(root, textvariable=AStartset, width=14)
 AEndset_entry 		= tk.Entry(root, textvariable=AEndset, width=14)
 AMultset_entry 		= tk.Entry(root, textvariable=AMultset, width=14)
 ACountset_entry 	= tk.Entry(root, textvariable=ACountset, width=14)
-
-# ~ VStartset_entry 	= tk.Entry(root, textvariable=VStartset, width=14)
-# ~ VEndset_entry 	= tk.Entry(root, textvariable=VEndset, width=14)
-# ~ VMultset_entry 	= tk.Entry(root, textvariable=VMultset, width=14)
-# ~ VCountset_entry 	= tk.Entry(root, textvariable=VCountset, width=14)
 
 IVset.set(0.21)
 OVset.set(0.0)
@@ -365,12 +273,6 @@ AMultset.set(5)
 ACountset.set(int(gen_count(int(AEndset.get()) + int(AMultset.get()), 
 			int(AStartset.get())) / int(AMultset.get())))
 
-# ~ VStartset.set(15)
-# ~ VEndset.set(25)
-# ~ VMultset.set(1)
-# ~ VCountset.set(int(gen_count(int(VEndset.get()) + int(VMultset.get()), 
-			# ~ int(VStartset.get())) / int(VMultset.get())))
-
 IVset_entry.grid	(row=0,  column=1)
 OVset_entry.grid	(row=1,  column=1)
 Vdropset_entry.grid	(row=2,  column=1)
@@ -386,11 +288,6 @@ AStartset_entry.grid 	(row=10,  column=1)
 AEndset_entry.grid 	(row=11,  column=1)
 AMultset_entry.grid 	(row=12, column=1)
 ACountset_entry.grid 	(row=13, column=1)
-
-# ~ VStartset_entry.grid 	(row=14,  column=1)
-# ~ VEndset_entry.grid 		(row=15,  column=1)
-# ~ VMultset_entry.grid 	(row=16, column=1)
-# ~ VCountset_entry.grid 	(row=17, column=1)
 
 ####################################
 ########## Create Labels ##########
@@ -479,47 +376,15 @@ amb_count_label_text.set("Loop Count")
 amb_count_label = tk.Label(root, textvariable=amb_count_label_text, width=10)
 amb_count_label.grid(row=13, column=2)
 
-# ~ iv_start_label = tk.StringVar()
-# ~ iv_start_label_text = tk.StringVar()
-# ~ iv_start_label_text.set("Start input V")
-# ~ iv_start_label = tk.Label(root, textvariable=iv_start_label_text, width=14)
-# ~ iv_start_label.grid(row=14, column=2)
-
-# ~ iv_end_label = tk.StringVar()
-# ~ iv_end_label_text = tk.StringVar()
-# ~ iv_end_label_text.set("End input V")
-# ~ iv_end_label = tk.Label(root, textvariable=iv_end_label_text, width=10)
-# ~ iv_end_label.grid(row=15, column=2)
-
-# ~ iv_mult_label = tk.StringVar()
-# ~ iv_mult_label_text = tk.StringVar()
-# ~ iv_mult_label_text.set("Loop Mult")
-# ~ iv_mult_label = tk.Label(root, textvariable=iv_mult_label_text, width=10)
-# ~ iv_mult_label.grid(row=16, column=2)
-
-# ~ iv_count_label = tk.StringVar()
-# ~ iv_count_label_text = tk.StringVar()
-# ~ iv_count_label_text.set("Loop Count")
-# ~ iv_count_label = tk.Label(root, textvariable=iv_count_label_text, width=10)
-# ~ iv_count_label.grid(row=17, column=2)
-
 ###########
 
 Amb_in_label   		= tk.Label(root, text="Ambient ")
 JTemp_Amb_in_label  	= tk.Label(root, text="Junct T")
 JTemp_Amb_PF_in_label	= tk.Label(root, text="P/F")
 
-# ~ IVolt_in_label   		= tk.Label(root, text="Input V ")
-# ~ JTemp_IV_in_label   	= tk.Label(root, text="Junct T")
-# ~ JTemp_IV_PF_in_label	= tk.Label(root, text="P/F")
-
 Amb_val_label		= tk.StringVar()
 JTemp_Amb_val_label	= tk.StringVar()
 JTemp_Amb_PF_val_label	= tk.StringVar()
-
-# ~ IVolt_val_label		= tk.StringVar()
-# ~ JTemp_IV_val_label		= tk.StringVar()
-# ~ JTemp_IV_PF_val_label	= tk.StringVar()
 
 Amb_val_label_text = tk.StringVar()
 Amb_val_label_text.set(MAXambset.get())
@@ -535,21 +400,6 @@ JTemp_Amb_PF_val_label_text = tk.StringVar()
 JTemp_Amb_PF_val_label_text.set(pass_fail(JTempset.get(), MAXallset.get()))
 JTemp_Amb_PF_val_label = tk.Label(root, textvariable=JTemp_Amb_PF_val_label_text, width=10)
 JTemp_Amb_PF_val_label.grid(row=1, column=6)
-
-# ~ IVolt_val_label_text = tk.StringVar()
-# ~ IVolt_val_label_text.set("0.21")
-# ~ IVolt_val_label = tk.Label(root, textvariable=IVolt_val_label_text, width=10)
-# ~ IVolt_val_label.grid(row=1, column=7)
-
-# ~ JTemp_IV_val_label_text = tk.StringVar()
-# ~ JTemp_IV_val_label_text.set("test")
-# ~ JTemp_IV_val_label = tk.Label(root, textvariable=JTemp_IV_val_label_text, width=10)
-# ~ JTemp_IV_val_label.grid(row=1, column=8)
-
-# ~ JTemp_IV_PF_val_label_text = tk.StringVar()
-# ~ JTemp_IV_PF_val_label_text.set("Pass")
-# ~ JTemp_IV_PF_val_label = tk.Label(root, textvariable=JTemp_IV_PF_val_label_text, width=10)
-# ~ JTemp_IV_PF_val_label.grid(row=1, column=9)
 
 #####################################################
 ################ The Label Generator ################
