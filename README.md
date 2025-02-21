@@ -1,6 +1,6 @@
 # thermal_calculator-
 Thermal Calculator for Electronic Components
 
-This useful Python TK GUI generates a thermal profile for components as a function of voltage drop, measured current, RTheta, ambient temp, and max temp of component.
+This useful Python TK GUI generates a thermal profile for components as a function of standard datasheet values such as: voltage drop, measured current, RTheta, ambient temp, and max temp of component.
 
-It can be used for quick thermal profiling of most components.
+It is intended for quick thermal profiling of most electronic components using values from the datasheet.
