@@ -65,10 +65,10 @@ V_DROP	 	= 0
 MEASURED_I	= 0
 MEASURED_W	= 0
 TEMP_RISE	= 0
-RTH		= 0
-MAX_AMBIENT 	= 0
+RTH		    = 0
+MAX_AMBIENT = 0
 JUNCT_TEMP 	= 0
-MAX_ALLOWED 	= 0
+MAX_ALLOWED = 0
 
 ####################################################
 ############### Button Declarations ################
@@ -110,12 +110,12 @@ def pass_fail(juncTemp, maxTemp):
 	return result
 
 def gen_temp():	
-	globals()[INPUT_V]	= IVset.get()
+	globals()[INPUT_V]	    = IVset.get()
 	globals()[OUTPUT_V] 	= OVset.get()
-	globals()[V_DROP]	= Vdropset.get()
+	globals()[V_DROP]	    = Vdropset.get()
 	globals()[MEASURED_I]	= MAset.get()
 	globals()[MEASURED_W]	= MWset.get()
-	globals()[RTH]		= RTHset.get()
+	globals()[RTH]		    = RTHset.get()
 	globals()[TEMP_RISE]	= TRiseset.get()
 	globals()[MAX_AMBIENT] 	= MAXambset.get()
 	globals()[JUNCT_TEMP] 	= JTempset.get()
@@ -151,12 +151,12 @@ def gen_temp():
 
 
 def show_AT_Labels():	
-	globals()[INPUT_V]	= IVset.get()
+	globals()[INPUT_V]	    = IVset.get()
 	globals()[OUTPUT_V] 	= OVset.get()
-	globals()[V_DROP]	= Vdropset.get()
+	globals()[V_DROP]	    = Vdropset.get()
 	globals()[MEASURED_I]	= MAset.get()
 	globals()[MEASURED_W]	= MWset.get()
-	globals()[RTH]		= RTHset.get()
+	globals()[RTH]		    = RTHset.get()
 	globals()[TEMP_RISE]	= TRiseset.get()
 	globals()[MAX_AMBIENT] 	= MAXambset.get()
 	globals()[JUNCT_TEMP] 	= JTempset.get()
@@ -273,21 +273,21 @@ AMultset.set(5)
 ACountset.set(int(gen_count(int(AEndset.get()) + int(AMultset.get()), 
 			int(AStartset.get())) / int(AMultset.get())))
 
-IVset_entry.grid	(row=0,  column=1)
-OVset_entry.grid	(row=1,  column=1)
-Vdropset_entry.grid	(row=2,  column=1)
-MAset_entry.grid    	(row=3,  column=1)
-MWset_entry.grid    	(row=4,  column=1)
-RTHset_entry.grid	(row=5,  column=1)
-TRiseset_entry.grid 	(row=6,  column=1)
-MAXambset_entry.grid 	(row=7,  column=1)
-JTempset_entry.grid 	(row=8,  column=1)
-MAXallset_entry.grid 	(row=9,  column=1)
+IVset_entry.grid	 (row=0,  column=1)
+OVset_entry.grid	 (row=1,  column=1)
+Vdropset_entry.grid	 (row=2,  column=1)
+MAset_entry.grid     (row=3,  column=1)
+MWset_entry.grid     (row=4,  column=1)
+RTHset_entry.grid	 (row=5,  column=1)
+TRiseset_entry.grid  (row=6,  column=1)
+MAXambset_entry.grid (row=7,  column=1)
+JTempset_entry.grid  (row=8,  column=1)
+MAXallset_entry.grid (row=9,  column=1)
 
-AStartset_entry.grid 	(row=10,  column=1)
-AEndset_entry.grid 	(row=11,  column=1)
-AMultset_entry.grid 	(row=12, column=1)
-ACountset_entry.grid 	(row=13, column=1)
+AStartset_entry.grid (row=10,  column=1)
+AEndset_entry.grid 	 (row=11,  column=1)
+AMultset_entry.grid  (row=12, column=1)
+ACountset_entry.grid (row=13, column=1)
 
 ####################################
 ########## Create Labels ##########
@@ -378,12 +378,12 @@ amb_count_label.grid(row=13, column=2)
 
 ###########
 
-Amb_in_label   		= tk.Label(root, text="Ambient ")
+Amb_in_label   		    = tk.Label(root, text="Ambient ")
 JTemp_Amb_in_label  	= tk.Label(root, text="Junct T")
 JTemp_Amb_PF_in_label	= tk.Label(root, text="P/F")
 
-Amb_val_label		= tk.StringVar()
-JTemp_Amb_val_label	= tk.StringVar()
+Amb_val_label		    = tk.StringVar()
+JTemp_Amb_val_label	    = tk.StringVar()
 JTemp_Amb_PF_val_label	= tk.StringVar()
 
 Amb_val_label_text = tk.StringVar()
@@ -408,7 +408,7 @@ for a in range(30):
 	root.grid_columnconfigure	(a,  minsize=column_size)
 	root.grid_rowconfigure		(a,  minsize=row_size)
 	
-	Amb_in_label.grid		(row=0, column=4)
+	Amb_in_label.grid		    (row=0, column=4)
 	JTemp_Amb_in_label.grid 	(row=0, column=5)
 	JTemp_Amb_PF_in_label.grid	(row=0, column=6)
  
