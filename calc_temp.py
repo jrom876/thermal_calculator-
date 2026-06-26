@@ -50,14 +50,16 @@ row_size = 25
 #############################################
 ################## GLOBALS ##################
 
-MILLI 		= 1e-3
-MICRO 		= 1e-6
-NANO		= 1e-9
+FEMTO 		= 1e-15
 PICO		= 1e-12
+NANO		= 1e-9
+MICRO 		= 1e-6
+MILLI 		= 1e-3
 KILO		= 1e3
 MEGA		= 1e6
 GIGA		= 1e9
 TERA		= 1e12
+PETA		= 1e15
 
 INPUT_V 	= 0
 OUTPUT_V 	= 0
