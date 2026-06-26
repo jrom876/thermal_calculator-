@@ -50,6 +50,7 @@ row_size = 25
 #############################################
 ################## GLOBALS ##################
 
+ATTO		= 1e-18
 FEMTO 		= 1e-15
 PICO		= 1e-12
 NANO		= 1e-9
@@ -60,6 +61,7 @@ MEGA		= 1e6
 GIGA		= 1e9
 TERA		= 1e12
 PETA		= 1e15
+EXA			= 1e18
 
 INPUT_V 	= 0
 OUTPUT_V 	= 0
