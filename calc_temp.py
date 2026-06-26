@@ -86,7 +86,7 @@ clear_AT_button = tk.Button(text="Clear AT",
 		command=lambda: clear_AT_Data_Labels(), width=13)                     
   
 gen_temp_button.grid		(row=0,		column=0)
-ambient_button.grid		(row=10,	column=0)
+ambient_button.grid			(row=10,	column=0)
 clear_AT_button.grid		(row=11,	column=0)
 
 ################### Functions and Commands ################### 
@@ -169,7 +169,7 @@ def show_AT_Labels():
 	TRiseset.set(round(gen_temp_rise(IVset.get(), OVset.get(), MAset.get(), RTHset.get()),4))
 	globals()[TEMP_RISE]	= TRiseset.get()
 	Vdropset.set(float(IVset.get()) - float(OVset.get()))
-	globals()[V_DROP]	 = Vdropset.get()
+	globals()[V_DROP]	 	= Vdropset.get()
 	mwset = (float(Vdropset.get()) * float(MAset.get()))
 	MWset.set(float(round(mwset,5)))
 	globals()[MEASURED_W]	= MWset.get()
